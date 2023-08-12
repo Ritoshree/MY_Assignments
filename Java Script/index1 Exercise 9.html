@@ -1,0 +1,122 @@
+// Exercise-9 
+// Question 1
+// Write a program in JavaScript to define a function that validates the form given below.
+//Validations Requirements:
+// Length of firstname and lastname should be of minimum length 2 and maximum 15.
+// firstname and lastname can only contain English alphabets, firstname and lastname can only contain letters in small case.
+// age should be between 18 and 60.
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+    <script>
+        function validateForm() {
+            var firstname = document.getElementById("firstname").value;
+            var lastname = document.getElementById("lastname").value;
+            var age = document.getElementById("age").value;
+            //First Name 
+            if (firstname == "") {
+                alert("Please enter your first name");
+                return false;
+            }
+
+            if (firstname.length < 2 || firstname.length > 15) {
+                alert("First name must be at least 2 characters and not more than 15 charcters long");
+                return false;
+            }
+
+            if (!firstname.match(/^[a-z]+$/)) {
+                alert("First name can only contain letters");
+                return false;
+            }
+            // Last Name
+            if (lastname == "") {
+                alert("Please enter your last name");
+                return false;
+            }
+            if (lastname.length < 2 || lastname.length > 15) {
+                alert("Last name must be at least 2 characters and not more than 15 charcters long");
+                return false;
+            }
+
+            if (!lastname.match(/^[a-z]+$/)) {
+                alert("Last name can only contain letters");
+                return false;
+            }
+            // Age
+            if (age < 18 || age > 60) {
+                alert("Age must be between 18 and 60");
+                return false;
+            }
+            return true;
+        }
+    </script>
+</head>
+
+<body>
+    <form onsubmit="return validateForm()" style=" display: inline-block;border: 1px solid blue;background-color: wheat; padding: 5px;margin-left: 30%;">
+
+        <label><b>First Name</b></label><div><input type="text" id="firstname"><br></div>
+        <label><b>Last Name</b></label><div><input type="text" id="lastname"><br></div>
+        <label><b>Age</b></label><div><input type="number" id="age"><br></div><br>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+
+</html>
+
+// Question 2
+// Write a program in JavaScript to define a function that validates the form given below
+// Validations Requirements: Length of name should be between 2 and 15, should contain only English alphabets
+// • Price can't be negative.
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+    <script>
+        function validateForm() {
+            var Name = document.getElementById("name").value;
+            var Price = document.getElementById("price").value;
+            // Name 
+            if (Name == "") {
+                alert("Please enter your name");
+                return false;
+            }
+
+            if (Name.length < 2 || Name.length > 15) {
+                alert("name must be at least 2 characters and not more than 15 charcters long");
+                return false;
+            }
+
+            if (!Name.match(/^[a-zA-z]+$/)) {
+                alert("name can only contain letters");
+                return false;
+            }
+        //    Price
+            if (Price < 0) {
+                alert("Price must be positive");
+                return false;
+            }
+            return true;
+        }
+    </script>
+</head>
+
+<body>
+    <form onsubmit="return validateForm()" style=" display: inline-block;border: 1px solid blue;background-color: wheat; padding: 5px;margin-left: 30%;">
+
+        <label><b> Name</b></label><div><input type="text" id="name"><br></div>
+        <label><b>Price</b></label><div><input type="number" id="price"><br></div><br>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+
+</html>
